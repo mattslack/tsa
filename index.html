@@ -68,9 +68,7 @@
         #tsa_container.none > #arrow,
         #tsa_container:not(.none) > #loading,
         #tsa_container:not(.reloading) > #reloading,
-        #tsa_container.none > #direction_label,
-        #tsa_container.left > #direction_label > #direction_right,
-        #tsa_container:not(.left) > #direction_label > #direction_left {
+        #tsa_container.none > #direction_label {
           display: none;
         }
 
@@ -91,6 +89,9 @@
           background-position: 0 0;
         }
 
+        #direction_label {
+          text-transform: uppercase;
+        }
         #tsa_container.reloading > #direction_label {
           color: transparent;
           text-shadow: none;
@@ -142,12 +143,6 @@
   <div id="tsa_container" class="none">
     <div id="arrow"></div>
     <div id="direction_label">
-      <div id="direction_left">
-          LEFT
-      </div>
-      <div id="direction_right">
-          RIGHT
-      </div>
     </div>
   <div id="loading">
       Initializing TSA Line Assistant
@@ -218,24 +213,11 @@
 
     setTimeout(function() {
       document.getElementById('tsa_container').className = direction;
+      document.getElementById('direction_label').textContent = direction;
       tsaPending = false;
     }, 100);
   }
 
-  (function () {
-    'use strict';
-
-    if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-      var msViewportStyle = document.createElement('style');
-      msViewportStyle.appendChild(
-        document.createTextNode(
-          '@-ms-viewport{width:auto!important}'
-        )
-      );
-      document.querySelector('head').appendChild(msViewportStyle);
-    }
-
-  })();
 </script>
 </body>
 </html>
