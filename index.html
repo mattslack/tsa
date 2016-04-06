@@ -76,7 +76,7 @@
           background-image: url('resources/images/arrows.png');
           height: 200px;
           width: 200px;
-          background-size: 400px 200px;
+          background-size: 200px 200px;
           background-repeat: no-repeat;
           margin: auto;
         }
@@ -98,18 +98,15 @@
         }
 
         #tsa_container.right > #arrow {
-            background-position: -200px, 0;
+          -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
         }
 
         @media (min-height: 550px) {
           #arrow {
             height: 300px;
             width: 300px;
-            background-size: 600px 300px;
-          }
-
-          #tsa_container.right > #arrow {
-            background-position: -300px, 0;
+            background-size: 300px 300px;
           }
 
           #tsa_container {
@@ -122,11 +119,7 @@
           #arrow {
             height: 600px;
             width: 600px;
-            background-size: 1200px 600px;
-          }
-
-          #tsa_container.right > #arrow {
-            background-position: -600px, 0;
+            background-size: 600px 600px;
           }
 
           #tsa_container {
