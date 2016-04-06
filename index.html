@@ -8,14 +8,11 @@
 
 
     <style>
-        @-webkit-viewport { width: device-width; }
-        @-moz-viewport    { width: device-width; }
-        @-ms-viewport     { width: device-width; }
-        @-o-viewport      { width: device-width; }
-        @viewport         { width: device-width; }
-
         html, body {
           position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
           height: 100%;
           margin: 0;
           padding: 0;
@@ -31,22 +28,7 @@
 
           -webkit-touch-callout: none; /* iOS Safari */
           -webkit-user-select: none; /* Chrome/Safari/Opera */
-          -khtml-user-select: none; /* Konqueror */
-          -moz-user-select: none; /* Firefox */
-          -ms-user-select: none; /* IE/Edge */
           user-select: none;
-        }
-
-        .site-wrapper {
-          display: table;
-          width: 100%;
-          height: 100%;
-          min-height: 100%;
-        }
-
-        .cover-container {
-          display: table-cell;
-          vertical-align: middle;
         }
 
         .mastfoot {
@@ -120,12 +102,9 @@
 
         @media (min-height: 550px) {
           #arrow {
-            background-image: url('resources/images/arrows.png');
             height: 300px;
             width: 300px;
             background-size: 600px 300px;
-            background-repeat: no-repeat;
-            margin: auto;
           }
 
           #tsa_container.right > #arrow {
@@ -140,12 +119,9 @@
 
         @media (min-height: 850px) {
           #arrow {
-            background-image: url('resources/images/arrows.png');
             height: 600px;
             width: 600px;
             background-size: 1200px 600px;
-            background-repeat: no-repeat;
-            margin: auto;
           }
 
           #tsa_container.right > #arrow {
@@ -163,48 +139,43 @@
 </head>
 
 <body>
-  <div class="site-wrapper">
-    <div class="cover-container">
-      <div id="tsa_container" class="none">
-        <div id="arrow"></div>
-        <div id="direction_label">
-          <div id="direction_left">
-              LEFT
-          </div>
-          <div id="direction_right">
-              RIGHT
-          </div>
-        </div>
-      <div id="loading">
-          Initializing TSA Line Assistant
+  <div id="tsa_container" class="none">
+    <div id="arrow"></div>
+    <div id="direction_label">
+      <div id="direction_left">
+          LEFT
       </div>
-      <div id="reloading">
+      <div id="direction_right">
+          RIGHT
       </div>
     </div>
+  <div id="loading">
+      Initializing TSA Line Assistant
+  </div>
+  <div id="reloading">
+  </div>
 </div>
 
 <div id="social_footer" class="mastfoot">
-  <div class="inner">
-    <a target="_blank" href="https://github.com/arik-so/tsa/fork"
-       class="btn btn-social-icon btn-github">
-       <img src="resources/images/github.svg" alt="Github">
-    </a>
-    <a target="_blank"
-       href="https://twitter.com/intent/tweet?hashtags=tsaengineering&original_referer=https%3A%2F%2Ftsa.arik.io%2F&ref_src=twsrc%5Etfw&text=TSA%20Line%20Assistant&tw_p=tweetbutton&url=https%3A%2F%2Ftsa.arik.io&via=arikaleph"
-       class="btn btn-social-icon btn-twitter">
-       <img src="resources/images/twitter.svg" alt="Twitter">
-    </a>
+  <a target="_blank" href="https://github.com/arik-so/tsa/fork"
+     class="btn btn-social-icon btn-github">
+     <img src="resources/images/github.svg" alt="Github">
+  </a>
+  <a target="_blank"
+     href="https://twitter.com/intent/tweet?hashtags=tsaengineering&original_referer=https%3A%2F%2Ftsa.arik.io%2F&ref_src=twsrc%5Etfw&text=TSA%20Line%20Assistant&tw_p=tweetbutton&url=https%3A%2F%2Ftsa.arik.io&via=arikaleph"
+     class="btn btn-social-icon btn-twitter">
+     <img src="resources/images/twitter.svg" alt="Twitter">
+  </a>
 
-    <script>!function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-        if (!d.getElementById(id)) {
-            js = d.createElement(s);
-            js.id = id;
-            js.src = p + '://platform.twitter.com/widgets.js';
-            fjs.parentNode.insertBefore(js, fjs);
-        }
-    }(document, 'script', 'twitter-wjs');</script>
-  </div>
+  <script>!function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+      if (!d.getElementById(id)) {
+          js = d.createElement(s);
+          js.id = id;
+          js.src = p + '://platform.twitter.com/widgets.js';
+          fjs.parentNode.insertBefore(js, fjs);
+      }
+  }(document, 'script', 'twitter-wjs');</script>
 </div>
 
 <script type="text/javascript">
